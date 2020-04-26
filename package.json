@@ -4,7 +4,15 @@
     "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run deploy"
+    }
+  },
   "devDependencies": {
     "vuepress": "^1.4.1"
+  },
+  "dependencies": {
+    "husky": "^4.2.5"
   }
 }
