@@ -1,7 +1,7 @@
 //设定顶部导航栏、侧边导航栏等项目配置的核心文件
 module.exports = {
-  title: '亮亮首页', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
-  description: '前端记录', // meta 中的描述文字，用于SEO
+  title: '前端搬运工', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
+  description: '前端文章记录', // meta 中的描述文字，用于SEO
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     [
@@ -18,7 +18,7 @@ module.exports = {
 
       //格式二：添加下拉菜单，link指向的文件路径
       {
-        text: '分类', //默认显示
+        text: '知识点', //默认显示
         ariaLabel: '分类', //用于识别的label
         items: [
           { text: '文章', link: '/pages/folder1/test1.md' },
