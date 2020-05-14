@@ -83,8 +83,7 @@ module.exports = {
           children: [
             ['coding.md', '浏览器API'],
             ['wheel.md', '浏览器原理'],
-            ['DataStructure.md', 'Node'],
-            ['algorithm.md', '算法']
+            ['DataStructure.md', 'Node']
           ]
         },
         {
