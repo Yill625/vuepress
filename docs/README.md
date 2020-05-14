@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: /learn.svg
 heroText: 前端搬运
 tagline: 记录前端所看过的文章
 actionText: 快速查看 →
