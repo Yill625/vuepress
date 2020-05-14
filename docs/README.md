@@ -4,7 +4,7 @@ heroImage: /learn.svg
 heroText: 前端搬运
 tagline: 记录前端所看过的文章
 actionText: 快速查看 →
-actionLink: /zh/guide/
+actionLink: /pages/article/index.md
 features:
   - title: 简洁至上
     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
