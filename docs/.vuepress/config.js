@@ -17,36 +17,108 @@ module.exports = {
       { text: '首页', link: '/' },
 
       //格式二：添加下拉菜单，link指向的文件路径
-      {
-        text: '知识点', //默认显示
-        ariaLabel: '分类', //用于识别的label
-        items: [
-          { text: '文章', link: '/pages/folder1/test1.md' },
-          //点击标签会跳转至link的markdown文件生成的页面
-          { text: '琐碎', link: '/pages/folder2/test4.md' }
-        ]
-      },
-      { text: '功能演示', link: '/pages/folder1/test3.md' },
+      // {
+      //   text: '知识点', //默认显示
+      //   ariaLabel: '分类', //用于识别的label
+      //   items: [
+      //     { text: '文章', link: '/pages/article/index.md' },
+      //     //点击标签会跳转至link的markdown文件生成的页面
+      //     { text: '琐碎', link: '/pages/other/index.md' }
+      //   ]
+      // }
+      { text: '知识点', link: '/pages/article/index.md' }
 
-      //格式三：跳转至外部网页，需http/https前缀
-      { text: 'Github', link: 'https://github.com/dwanda' }
+      // //格式三：跳转至外部网页，需http/https前缀
+      // { text: 'Github', link: 'https://github.com/dwanda' }
     ],
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
     sidebar: {
-      '/pages/folder1/': [
+      '/pages/article/': [
         {
           title: '一、JavaScript基础', // 一级菜单名称
           collapsable: true, // false为默认展开菜单, 默认值true是折叠,
           sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
           children: [
-            ['test2.md', '变量和类型'], //菜单名称为'子菜单1'，跳转至/pages/folder1/test1.md
-            ['test3.md', '原型和原型链']
+            ['variable.md', '变量'], //菜单名称为'子菜单1'，
+            ['type.md', '类型'], //菜单名称为'子菜单1'，
+            ['prototype.md', '原型'], //菜单名称为'子菜单1'，
+            ['scope.md', '作用域'],
+            ['closure.md', '闭包'],
+            ['eventLoop.md', '执行机制'],
+            ['PrototypeChain.md', '语法'],
+            ['api.md', 'API']
           ]
         },
         {
-          title: '测试菜单2',
+          title: '二、HTML和CSS',
           collapsable: false,
-          children: [['test2.md', '子菜单1']]
+          children: [
+            ['html.md', 'HTML'],
+            ['css.md', 'CSS'],
+            ['write.md', '手写']
+          ]
+        },
+        {
+          title: '三、计算机基础',
+          collapsable: false,
+          children: [
+            ['compile.md', '编译原理'],
+            ['CommunicationsProtocol.md', '网络协议'],
+            ['DesignPattern.md', '设计模式']
+          ]
+        },
+        {
+          title: '四、数据结构和算法',
+          collapsable: false,
+          children: [
+            ['coding.md', 'JavaScript编码能力'],
+            ['wheel.md', '手动实现前端轮子'],
+            ['DataStructure.md', '数据结构'],
+            ['algorithm.md', '算法']
+          ]
+        },
+        {
+          title: '五、运行环境',
+          collapsable: false,
+          children: [
+            ['coding.md', '浏览器API'],
+            ['wheel.md', '浏览器原理'],
+            ['DataStructure.md', 'Node'],
+            ['algorithm.md', '算法']
+          ]
+        },
+        {
+          title: '六、框架和类库',
+          collapsable: false,
+          children: [
+            ['TypeScript.md', 'TypeScript'],
+            ['React.md', 'React'],
+            ['Vue.md', 'Vue'],
+            ['more.md', '多端开发'],
+            ['DataStream.md', '数据流管理'],
+            ['library.md', '实用库'],
+            ['dev.md', '开发和调试']
+          ]
+        },
+        {
+          title: '七、前端工程',
+          collapsable: false,
+          children: [
+            ['build.md', '项目构建'],
+            ['nginx.md', 'nginx'],
+            ['fast.md', '开发提速'],
+            ['git.md', '版本控制'],
+            ['CICD.md', '持续集成']
+          ]
+        },
+        {
+          title: '八、项目和业务',
+          collapsable: false,
+          children: [
+            ['optimization.md', '性能优化'],
+            ['safety.md', '前端安全'],
+            ['business.md', '业务相关']
+          ]
         }
       ]
 
