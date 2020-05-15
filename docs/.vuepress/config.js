@@ -42,10 +42,10 @@ module.exports = {
             ['variable.md', '变量'], //菜单名称为'子菜单1'，
             ['type.md', '类型'], //菜单名称为'子菜单1'，
             ['prototype.md', '原型'], //菜单名称为'子菜单1'，
+            ['PrototypeChain.md', '原型链'],
             ['scope.md', '作用域'],
             ['closure.md', '闭包'],
             ['eventLoop.md', '执行机制'],
-            ['PrototypeChain.md', ';原型链'],
             ['api.md', 'API']
           ]
         },
