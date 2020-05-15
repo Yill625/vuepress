@@ -45,7 +45,7 @@ module.exports = {
             ['scope.md', '作用域'],
             ['closure.md', '闭包'],
             ['eventLoop.md', '执行机制'],
-            ['PrototypeChain.md', '语法'],
+            ['PrototypeChain.md', ';原型链'],
             ['api.md', 'API']
           ]
         },
