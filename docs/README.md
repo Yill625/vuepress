@@ -2,7 +2,7 @@
 home: true
 heroImage: /learn.svg
 heroText: 前端搬运工
-tagline: 记录前端所看过的文章并不断学习
+tagline: Learning was, is and will be important to all, old or young, rich or poor.
 actionText: 快速查看 →
 actionLink: /pages/article/index.md
 features:

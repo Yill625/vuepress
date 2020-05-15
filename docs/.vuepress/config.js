@@ -20,8 +20,10 @@ module.exports = {
       //浏览器的标签栏的网页图标，第一个'/'会遍历public文件夹的文件
     ]
   ],
-  //顶部导航栏
+
   themeConfig: {
+    lastUpdated: 'Last Updated', // string | boolean
+    //顶部导航栏
     nav: [
       //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
@@ -37,10 +39,9 @@ module.exports = {
       //   ]
       // }
       { text: '知识点', link: '/pages/article/index.md' },
-      { text: '工作问题', link: '/pages/WorkHole/index.md' }
-
+      { text: '工作问题', link: '/pages/WorkHole/index.md' },
       // //格式三：跳转至外部网页，需http/https前缀
-      // { text: 'Github', link: 'https://github.com/dwanda' }
+      { text: 'Github', link: 'https://github.com/Yill625' }
     ],
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
     sidebar: {
