@@ -36,7 +36,8 @@ module.exports = {
       //     { text: '琐碎', link: '/pages/other/index.md' }
       //   ]
       // }
-      { text: '知识点', link: '/pages/article/index.md' }
+      { text: '知识点', link: '/pages/article/index.md' },
+      { text: '工作问题', link: '/pages/WorkHole/index.md' }
 
       // //格式三：跳转至外部网页，需http/https前缀
       // { text: 'Github', link: 'https://github.com/dwanda' }
@@ -46,7 +47,7 @@ module.exports = {
       '/pages/article/': [
         {
           title: '一、JavaScript基础', // 一级菜单名称
-          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
           sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
           children: [
             ['variable.md', '变量'], //菜单名称为'子菜单1'，
@@ -130,8 +131,25 @@ module.exports = {
             ['business.md', '业务相关']
           ]
         }
+      ],
+      '/pages/WorkHole/': [
+        {
+          title: '一、后台管理页面', // 一级菜单名称
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+          sidebarDepth: 2, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+          children: [
+            ['AdminLibrary.md', '框架类库'] //菜单名称为'子菜单1'，
+          ]
+        },
+        {
+          title: '二、H5页面', // 一级菜单名称
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+          children: [
+            ['MobileLibrary.md', '框架类库'] //菜单名称为'子菜单1'，
+          ]
+        }
       ]
-
       //...可添加多个不同的侧边栏，不同页面会根据路径显示不同的侧边栏
     }
   }
