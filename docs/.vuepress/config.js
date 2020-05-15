@@ -46,6 +46,7 @@ module.exports = {
             ['scope.md', '作用域'],
             ['closure.md', '闭包'],
             ['eventLoop.md', '执行机制'],
+            ['grammar.md', '语法'],
             ['api.md', 'API']
           ]
         },
