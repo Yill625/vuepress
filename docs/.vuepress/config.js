@@ -25,22 +25,9 @@ module.exports = {
     lastUpdated: 'Last Updated', // string | boolean
     //顶部导航栏
     nav: [
-      //格式一：直接跳转，'/'为不添加路由，跳转至首页
       { text: '首页', link: '/' },
-
-      //格式二：添加下拉菜单，link指向的文件路径
-      // {
-      //   text: '知识点', //默认显示
-      //   ariaLabel: '分类', //用于识别的label
-      //   items: [
-      //     { text: '文章', link: '/pages/article/index.md' },
-      //     //点击标签会跳转至link的markdown文件生成的页面
-      //     { text: '琐碎', link: '/pages/other/index.md' }
-      //   ]
-      // }
       { text: '知识点', link: '/pages/article/index.md' },
       { text: '工作问题', link: '/pages/WorkHole/index.md' },
-      // //格式三：跳转至外部网页，需http/https前缀
       { text: 'Github', link: 'https://github.com/Yill625' }
     ],
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
@@ -53,10 +40,9 @@ module.exports = {
           children: [
             ['variable.md', '变量'], //菜单名称为'子菜单1'，
             ['type.md', '类型'], //菜单名称为'子菜单1'，
-            ['prototype.md', '原型'], //菜单名称为'子菜单1'，
-            ['PrototypeChain.md', '原型链'],
-            ['scope.md', '作用域'],
-            ['closure.md', '闭包'],
+            ['prototype.md', '原型和原型链'], //菜单名称为'子菜单1'，
+            ['scope.md', '作用域和闭包'],
+            // ['closure.md', ''],
             ['eventLoop.md', '执行机制'],
             ['grammar.md', '语法'],
             ['api.md', 'API']
@@ -94,9 +80,9 @@ module.exports = {
           title: '五、运行环境',
           collapsable: false,
           children: [
-            ['coding.md', '浏览器API'],
-            ['wheel.md', '浏览器原理'],
-            ['DataStructure.md', 'Node']
+            ['BOM.md', '浏览器API'],
+            ['BOMBase.md', '浏览器原理'],
+            ['node.md', 'Node']
           ]
         },
         {
@@ -127,6 +113,7 @@ module.exports = {
           title: '八、项目和业务',
           collapsable: false,
           children: [
+            ['backend .md', '后端技能'],
             ['optimization.md', '性能优化'],
             ['safety.md', '前端安全'],
             ['business.md', '业务相关']
