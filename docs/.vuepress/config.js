@@ -113,7 +113,7 @@ module.exports = {
           title: '八、项目和业务',
           collapsable: false,
           children: [
-            ['backend .md', '后端技能'],
+            ['backend.md', '后端技能'],
             ['optimization.md', '性能优化'],
             ['safety.md', '前端安全'],
             ['business.md', '业务相关']
