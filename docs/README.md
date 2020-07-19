@@ -7,7 +7,7 @@ actionText: 快速查看 →
 actionLink: /pages/article/index.md
 features:
   - title: 过去
-    details: 2年PHP开发经验，重学前端
+    details: 忘记后端，重学前端
   - title: 现在
     details: 刻意练习，日渐精进
   - title: 未来
