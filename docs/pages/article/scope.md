@@ -1,3 +1,5 @@
+[闭包](https://github.com/stephentian/33-js-concepts#8-%E9%97%AD%E5%8C%85)
+
 ## 1.理解词法作用域和动态作用域
 
 ## 2.理解 JavaScript 的作用域和作用域链

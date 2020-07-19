@@ -1,3 +1,5 @@
+[【JS 进阶】你真的掌握变量和类型了吗](https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-9)
+
 ## 1.JavaScript 规定了几种语言类型
 
 ## 2.JavaScript 对象的底层数据结构是什么
