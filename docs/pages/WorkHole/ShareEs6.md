@@ -343,3 +343,57 @@ const showSplashScreen = response.settings.showSplashScreen ?? true
 ```
 
 # Set 和 Map 数据结构
+
+## Set 基本用法
+
+> ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值
+
+```js
+const s = new Set()
+
+;[(2, 3, 5, 4, 5, 2, 2)].forEach(x => s.add(x))
+
+for (let i of s) {
+  console.log(i)
+}
+// 2 3 5 4
+
+// 去除数组的重复成员
+;[...new Set(array)]
+```
+
+## Set 实例的属性和方法
+
+- Set.prototype.constructor：构造函数，默认就是 Set 函数。
+- Set.prototype.size：返回 Set 实例的成员总数。
+- Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。
+
+- Set.prototype.add(value)：添加某个值，返回 Set 结构本身。
+- Set.prototype.delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+- Set.prototype.has(value)：返回一个布尔值，表示该值是否为 Set 的成员。
+- Set.prototype.clear()：清除所有成员，没有返回值。
+
+## Map 的基本用法
+
+> JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+
+```js
+const m = new Map()
+const o = { p: 'Hello World' }
+
+m.set(o, 'content')
+m.get(o) // "content"
+
+m.has(o) // true
+m.delete(o) // true
+m.has(o) // false
+```
+
+## Map 实例属性和方法
+
+- Map.prototype.size 返回 Map 实例的成员数量
+- Map.prototype.set(key,value) set 方法设置键名 key 对应的键值为 value，然后返回整个 Map 结构。如果 key 已经有值，则键值会被更新，否则就新生成该键。
+- Map.prototype.get(key) get 方法读取 key 对应的键值，如果找不到 key，返回 undefined。
+- Map.prototype.has(key) has 方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
+- Map.prototype.delete(key) delete 方法删除某个键，返回 true。如果删除失败，返回 false。
+- Map.prototype.clear() clear 方法清除所有成员，没有返回值。
