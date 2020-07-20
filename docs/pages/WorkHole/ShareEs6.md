@@ -399,3 +399,8 @@ m.has(o) // false
 - Map.prototype.has(key) has 方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
 - Map.prototype.delete(key) delete 方法删除某个键，返回 true。如果删除失败，返回 false。
 - Map.prototype.clear() clear 方法清除所有成员，没有返回值。
+
+## 参考地址
+
+- [阮一峰 ECMAScript 入门](https://yill625.github.io/pages/WorkHole/ShareEs6.html#es6-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9%E5%88%86%E4%BA%AB)
+- [冴羽 ES6 完全使用手册](https://juejin.im/post/5bfe05505188252098022400)
