@@ -1,6 +1,8 @@
-# let 和 const 命令
+# es6 基础内容分享
 
-## 基本用法
+## let 和 const 命令
+
+### 基本用法
 
 > 1.声明的变量，只在 let const 命令所在的代码块内有效
 > 2.const 声明一个只读的常量。一旦声明，常量的值就不能改变
@@ -17,7 +19,7 @@ b // 1
 c // 100
 ```
 
-## 不存在变量提升
+### 不存在变量提升
 
 > var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为 undefined
 
@@ -34,7 +36,7 @@ console.log(bar) // 报错ReferenceError
 let bar = 2
 ```
 
-## 暂时性死区（TDZ）
+### 暂时性死区（TDZ）
 
 > 在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）
 
@@ -47,17 +49,17 @@ if (true) {
 }
 ```
 
-## 实际应用
+### 实际应用
 
 > 90% 的场景都用 const 。当需定义基本类型且后续会改变时使用 let
 
 ---
 
-# 变量的解构赋值
+## 变量的解构赋值
 
 > ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
 
-## 1.数组的结构赋值
+### 数组的结构赋值
 
 ```js
 let [foo, [[bar], baz]] = [1, [[2], 3]]
@@ -82,7 +84,7 @@ y // undefined
 z // []
 ```
 
-## 2.对象的结构
+### 2.对象的结构
 
 > 对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
 
@@ -95,7 +97,7 @@ let { baz } = { foo: 'aaa', bar: 'bbb' }
 baz // undefined
 ```
 
-## 实际应用
+### 实际应用
 
 > react 用经常使用结构来获取 state 和 props 中的数据 方便后续的一个展示
 
@@ -145,9 +147,9 @@ let { foo, bar } = example()
 
 ---
 
-# 函数参数的默认值
+## 函数参数的默认值
 
-## 基本用法
+### 基本用法
 
 ```js
 function log(x, y = 'World') {
@@ -172,7 +174,7 @@ foo(undefined, null)
 
 ---
 
-# rest 参数
+## rest 参数
 
 > ES6 引入 rest 参数（形式为 **_...变量名_** ），用于获取函数的多余参数，这样就不需要使用 arguments 对象了
 
@@ -197,9 +199,9 @@ add(2, 5, 3) // 10
 
 ---
 
-# 箭头函数
+## 箭头函数
 
-## 基本用法
+### 基本用法
 
 ```js
 // 函数参数为一个时 可以省略两边括号 只有一个表达式时可以省略return 和大括号
@@ -214,7 +216,7 @@ const f = function(v) {
 const f = () => 7
 ```
 
-# 扩展运算符(数组的结构赋值 对象的结构赋值)
+## 扩展运算符(数组的结构赋值 对象的结构赋值)
 
 > 扩展运算符（spread）是三个点（**_..._**）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列
 
@@ -226,9 +228,9 @@ console.log(1, ...[2, 3, 4], 5)
 // 1 2 3 4 5
 ```
 
-## 实际应用
+### 实际应用
 
-### 复制数组 浅拷贝
+#### 复制数组 浅拷贝
 
 ```js
 const a1 = [1, 2]
@@ -238,7 +240,7 @@ const a2 = [...a1]
 const [...a2] = a1
 ```
 
-### 合并数组
+#### 合并数组
 
 ```js
 const arr1 = ['a', 'b']
@@ -260,7 +262,7 @@ this.setState({
 })
 ```
 
-### 与解构赋值结合
+#### 与解构赋值结合
 
 ```js
 // ES5
@@ -284,7 +286,7 @@ rest   // []
 // [ "h", "e", "l", "l", "o" ]
 ```
 
-# 属性的简洁表示法
+## 属性的简洁表示法
 
 > ES6 允许在大括号里面，直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。
 
@@ -311,7 +313,7 @@ const o = {
 }
 ```
 
-# 链判断运算符
+## 链判断运算符
 
 ```js
 // 错误的写法
@@ -329,7 +331,7 @@ const firstName = message?.body?.user?.firstName || 'default'
 const fooValue = myForm.querySelector('input[name=foo]')?.value
 ```
 
-# Null 判断运算符
+## Null 判断运算符
 
 ```js
 // 读取对象属性的时候，如果某个属性的值是null或undefined，有时候需要为它们指定默认值。常见做法是通过||运算符指定默认值
@@ -342,9 +344,9 @@ const animationDuration = response.settings.animationDuration ?? 300
 const showSplashScreen = response.settings.showSplashScreen ?? true
 ```
 
-# Set 和 Map 数据结构
+## Set 和 Map 数据结构
 
-## Set 基本用法
+### Set 基本用法
 
 > ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值
 
@@ -362,7 +364,7 @@ for (let i of s) {
 ;[...new Set(array)]
 ```
 
-## Set 实例的属性和方法
+### Set 实例的属性和方法
 
 - Set.prototype.constructor：构造函数，默认就是 Set 函数。
 - Set.prototype.size：返回 Set 实例的成员总数。
@@ -373,7 +375,7 @@ for (let i of s) {
 - Set.prototype.has(value)：返回一个布尔值，表示该值是否为 Set 的成员。
 - Set.prototype.clear()：清除所有成员，没有返回值。
 
-## Map 的基本用法
+### Map 的基本用法
 
 > JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
 
@@ -389,7 +391,7 @@ m.delete(o) // true
 m.has(o) // false
 ```
 
-## Map 实例属性和方法
+### Map 实例属性和方法
 
 - Map.prototype.size 返回 Map 实例的成员数量
 - Map.prototype.set(key,value) set 方法设置键名 key 对应的键值为 value，然后返回整个 Map 结构。如果 key 已经有值，则键值会被更新，否则就新生成该键。
