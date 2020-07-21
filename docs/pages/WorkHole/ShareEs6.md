@@ -313,7 +313,7 @@ const o = {
 }
 ```
 
-## 链判断运算符
+## 链判断运算符(ES2020)
 
 ```js
 // 错误的写法
@@ -331,7 +331,7 @@ const firstName = message?.body?.user?.firstName || 'default'
 const fooValue = myForm.querySelector('input[name=foo]')?.value
 ```
 
-## Null 判断运算符
+## Null 判断运算符(ES2020)
 
 ```js
 // 读取对象属性的时候，如果某个属性的值是null或undefined，有时候需要为它们指定默认值。常见做法是通过||运算符指定默认值
