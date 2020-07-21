@@ -199,6 +199,12 @@ let a = {
 
 ### 常用方法
 
+![常用方法](https://weapposs.oss-cn-shenzhen.aliyuncs.com/15%E3%80%81%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.png)
+
 ### 补充方法
 
 ![补充方法](https://weapposs.oss-cn-shenzhen.aliyuncs.com/2020/07/16、数组常用方法补充reduce、filter、flat.png)
+
+## 参考地址
+
+[76 张脑图带你彻底搞懂原生 JS](https://juejin.im/post/5ebb68796fb9a0435432df8e)
