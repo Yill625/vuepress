@@ -1,7 +1,5 @@
 # 变量
 
-[【JS 进阶】你真的掌握变量和类型了吗](https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-9)
-
 ## 1.Symbol 类型在实际开发中的应用、可手动实现一个简单的 Symbol
 
 - [ES6 系列之模拟实现 Symbol 类型](https://github.com/mqyqingfeng/Blog/issues/87)
