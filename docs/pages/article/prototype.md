@@ -1,12 +1,18 @@
-> 1. 每一个函数，都有一个 prototype 属性。
-> 2. 所有通过函数 new 出来的对象，这个对象都有一个 **proto** 指向这个函数的 prototype。
-> 3. 当你想要使用一个对象（或者一个数组）的某个功能时：如果该对象本身具有这个功能，则直接使用；如果该对象本身没有这个功能，则去 **proto** 中找。
+# 原型和原型链
+
+- [🚀 图解原型和原型链](https://juejin.im/post/6844903797039300615)
 
 ## 1.理解原型设计模式以及 JavaScript 中的原型规则
 
+![原型链](http://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/BAUNLMYJLJ9iboLih4EzpVva6kHBvmTQtcLU8Hhp.png)
+
 ## 2.instanceof 的底层实现原理，手动实现一个 instanceof
 
+- [🚀 instanceof 的原理与实现](https://juejin.im/post/6844903985086726158)
+
 ## 4.实现继承的几种方式以及他们的优缺点
+
+- [🔥 继承的几种方式以及他们的优缺点](https://juejin.im/post/6844903839175278600)
 
 ## 5.至少说出一种开源项目(如 Node)中应用原型继承的案例
 
