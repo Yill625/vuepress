@@ -34,7 +34,7 @@
   - 可以直接操作其保存的变量，运行效率高
   - 由系统自动分配存储空间
 
-![栈内存](https://user-gold-cdn.xitu.io/2019/5/28/16afa4dd38de23b8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![栈内存](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/62zQaxyJy66Nd1WCaOHNHBFaBmkEv4cOFNTe0APC.png)
 
 > 相对于上面具有不可变性的原始类型，我习惯把对象称为引用类型，引用类型的值实际存储在堆内存中，它在栈中只存储了一个固定长度的地址，这个地址指向堆内存中的值。
 
@@ -44,7 +44,7 @@
   - 无法直接操作其内部存储，使用引用地址读取
   - 通过代码进行分配空间
 
-![堆内存](https://user-gold-cdn.xitu.io/2019/5/28/16afa4e49b1e49fd?imageslim)
+![堆内存](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/HYjVkWogC8TUMaRyKZUADBEH9sfhUcgMy6u3yTR1.png)
 
 ## 3.基本类型对应的内置对象，以及他们之间的装箱拆箱操作
 
@@ -71,7 +71,7 @@
 - instanceof 操作符可以帮助我们判断引用类型具体是什么类型的对象
 - 每一个引用类型都有 toString 方法，默认情况下，toString()方法被每个 Object 对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中 type 是对象的类型
 
-![判断类型](https://user-gold-cdn.xitu.io/2019/5/28/16afa4ee855cfa98?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![判断类型](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/V94vertfvp4M3ZgxUUup7eSozwqy9snxffvgEkk1.png)
 
 ## 5.可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用
 
@@ -80,7 +80,7 @@
   - 各种运数学算符（- \* /）
   - ==
 
-![类型转换](https://user-gold-cdn.xitu.io/2019/6/1/16b128d2444b90ce?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![类型转换](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/b19yqaOkAKfapmkhhnzB2RIYewSlzgBIIP4p97jm.png)
 
 ### 参考地址
 
