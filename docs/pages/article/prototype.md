@@ -4,7 +4,7 @@
 
 ## 1.理解原型设计模式以及 JavaScript 中的原型规则
 
-![原型链](http://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/BAUNLMYJLJ9iboLih4EzpVva6kHBvmTQtcLU8Hhp.png)
+![原型链](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/BAUNLMYJLJ9iboLih4EzpVva6kHBvmTQtcLU8Hhp.png)
 
 ## 2.instanceof 的底层实现原理，手动实现一个 instanceof
 
