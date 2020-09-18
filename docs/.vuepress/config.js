@@ -26,6 +26,7 @@ module.exports = {
     //顶部导航栏
     nav: [
       { text: '首页', link: '/' },
+      { text: '每日学习', link: '/pages/day/index.md' },
       { text: '知识点', link: '/pages/article/index.md' },
       { text: '工作分享', link: '/pages/WorkHole/index.md' },
       { text: 'Github', link: 'https://github.com/Yill625' }
