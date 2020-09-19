@@ -1,8 +1,39 @@
 # JavaScript 基础
 
-## 原型与原型链
+## [原型与原型链](https://github.com/mqyqingfeng/Blog/issues/2)
 
-## 执行上下文 <https://github.com/mqyqingfeng/Blog/issues/8>
+### prototype
+
+> 每个函数都有一个 prototype 属性，就是我们经常在各种例子中看到的那个 prototype
+
+### `__proto__`
+
+> 这是每一个 JavaScript 对象(除了 null )都具有的一个属性，叫`__proto__`，这个属性会指向该对象的原型
+
+### constructor
+
+> 指向实例倒是没有，因为一个构造函数可以生成多个实例，但是原型指向构造函数倒是有的，这就要讲到第三个属性：constructor，每个原型都有一个 constructor 属性指向关联的构造函数
+
+1. 构造函数
+2. 实例
+3. 原型对象
+
+相关文章
+[最详尽的 JS 原型与原型链终极详解，没有「可能是](https://www.jianshu.com/p/dee9f8b14771)
+
+### ！三者之间的关系
+
+> `实例与原型`-当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止
+
+> `原型的原型`-原型对象就是通过 Object 构造函数生成的，结合之前所讲，实例的 `__proto__` 指向构造函数的 prototype
+
+### 原型链
+
+> 实例的`__proto__`串联起来
+
+---
+
+## [执行上下文](https://github.com/mqyqingfeng/Blog/issues/8)
 
 > 每当 Javascript 代码在运行的时候，它都是在执行上下文中运行。
 
