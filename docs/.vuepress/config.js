@@ -26,10 +26,11 @@ module.exports = {
     //顶部导航栏
     nav: [
       { text: '首页', link: '/' },
+      { text: '前端思维导图', link: '/pages/xmind/JavaScript.md' },
       { text: '每日学习', link: '/pages/day/index.md' },
-      { text: '知识点', link: '/pages/article/index.md' },
+      // { text: '知识点', link: '/pages/article/index.md' },
       { text: '工作分享', link: '/pages/WorkHole/index.md' },
-      { text: 'Github', link: 'https://github.com/Yill625' }
+      { text: 'Github', link: 'https://github.com/Yill625' },
     ],
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
     sidebar: {
@@ -147,6 +148,16 @@ module.exports = {
             ['MobileLibrary.md', '框架类库'] //菜单名称为'子菜单1'，
           ]
         }
+      ],
+      '/pages/xmind/': [
+        {
+          title: 'JavaScript', // 一级菜单名称
+          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
+          sidebarDepth: 2, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+          children: [
+            ['JavaScript.md', 'JavaScript'], //菜单名称为'子菜单1'，
+          ]
+        },
       ]
       //...可添加多个不同的侧边栏，不同页面会根据路径显示不同的侧边栏
     }
