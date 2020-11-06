@@ -134,9 +134,78 @@ const a = {
 3. concat 浅拷贝数组
 4. slice 浅拷贝
 
-### 深拷贝
+```js
+// Object.assign()
+const obj = { a: 1 }
+const copy = Object.assign({}, obj)
+console.log(copy) // { a: 1 }
+// 2. ... 展开运算符
+const arr1 = [1, 2]
+const arr2 = [...arr1]
+// 3. concat 浅拷贝数
+const array1 = ['a', 'b', 'c']
+const array2 = ['d', 'e', 'f']
+const array3 = array1.concat(array2)
 
-## this 指向
+console.log(array3)
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
+// 4. slice 浅拷贝
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant']
+
+console.log(animals.slice(2))
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4))
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5))
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+```
+
+### 深拷贝 deepClone
+
+> 深拷贝会另外拷贝一份一个一模一样的对象,从堆内存中开辟一个新的区域存放新对象,新对象跟原对象不共享内存，修改新对象不会改到原对象。
+
+#### JSON.pares(JSON.stringify()) 的使用问题
+
+1. 无法解决循环引用的问题
+2. 无法拷贝特殊的对象 RegExp Date Set Map
+3. 无法拷贝函数
+
+#### 实现一个深拷贝
+
+1. 原始类型
+   - 直接返回
+2. 引用类型
+   - 循环引用
+     > 解决方案： 辟一个存储空间，来存储当前对象和拷贝对象的对应关系，当需要拷贝当前对象时，先去存储空间中找，有没有拷贝过这个对象，如果有的话直接返回，如果没有的话继续拷贝
+   - 可遍历类型
+     - Set
+     - Map
+     - Array
+     - Object
+   - 不可遍历类型
+     - Boolean
+     - Number
+     - Date
+     - Error
+     - Symbol Object(Symbol.prototype.valueOf.call(target))
+   - 函数 lodash 对函数的处理 因为拷贝函数没有啥意义
+     - 箭头函数 我们可以直接使用 eval 和函数字符串来重新生成一个箭头函数，注意这种方法是不适用于普通函数的。
+     - 非箭头函数 分别使用正则取出函数体和函数参数，然后使用 new Function ([arg1[, arg2[, ...argN]],] functionBody)构造函数重新构造一个新的函数
+
+[如何写出一个惊艳面试官的深拷贝?](https://segmentfault.com/a/1190000020255831)
+
+### 赋值
+
+#### 基本数据类型：赋值，赋值之后的两个变量互不影响
+
+#### 引用数据类型：赋 “址” ，两个变量具有相同的引用，指向同一个对象，相互之间有影响
+
+#### 为什么需要浅拷贝和深拷贝？
+
+1. 对引用类型进行赋**址**操作，两个变量指向同一个对象，改变变量 a 之后会影响变量 b，哪怕改变的只是对象 a 中的基本类型数据
+2. 通常在开发中并不希望改变变量 a 之后会影响到变量 b，这时就需要用到浅拷贝和深拷贝。
 
 ## JS 数组
 
