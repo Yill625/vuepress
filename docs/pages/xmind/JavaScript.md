@@ -299,6 +299,37 @@ Function.prototype.bind2 = function(context) {
 
 ## JS 数组
 
+### 函数的 arguments 为什么不是数组？如何转化为一个数组
+
+#### 常见的类数组
+
+1. arguments
+2. 用 getElementsByTagName/ClassName()获得的 HTMLCollection
+3. 用 querySelector 获得的 nodeList
+
+#### 类数组转换为数组的方式
+
+1. Array.prototype.slice.call()
+2. Array.from()
+3. ... 展开运算符
+
+```js
+function arr(a, b) {
+  console.log(Array.prototype.slice.call(arguments)) //[1,2]
+  console.log(Array.from(arguments))
+  console.log([...arguments])
+}
+
+arr(1, 2)
+```
+
+#### 对象转换为数组
+
+1. Array.from() 对象的 length 起关键作用
+2. Object.values()
+3. Object.keys()
+4. Object.entries()
+
 ## JS 如何实现继承
 
 ## 原型链
