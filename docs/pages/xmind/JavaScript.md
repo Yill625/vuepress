@@ -207,6 +207,96 @@ console.log(animals.slice(1, 5))
 1. 对引用类型进行赋**址**操作，两个变量指向同一个对象，改变变量 a 之后会影响变量 b，哪怕改变的只是对象 a 中的基本类型数据
 2. 通常在开发中并不希望改变变量 a 之后会影响到变量 b，这时就需要用到浅拷贝和深拷贝。
 
+## this 指向
+
+### 显式绑定
+
+#### call
+
+```js
+/**
+1. 将函数设为对象的属性
+2. 执行该函数
+3. 删除该函数
+**/
+
+Function.prototype.call2 = function(context) {
+  var context = context || window
+  context.fn = this
+
+  var args = []
+  for (var i = 1, len = arguments.length; i < len; i++) {
+    args.push('arguments[' + i + ']')
+  }
+
+  var result = eval('context.fn(' + args + ')')
+
+  delete context.fn
+  return result
+}
+```
+
+#### apply
+
+```js
+Function.prototype.apply = function (context, arr) {
+    var context = Object(context) || window;
+    context.fn = this;
+
+    var result;
+    if (!arr) {
+        result = context.fn();
+    }
+    else {
+        var args = [];
+        for (var i = 0, len = arr.length; i < len; i++) {
+            args.push('arr[' + i + ']');
+        }
+        result = eval('context.fn(' + args + ')')
+    }
+
+    delete context.fn
+
+```
+
+#### bind
+
+```js
+Function.prototype.bind2 = function(context) {
+  if (typeof this !== 'function') {
+    throw new Error(
+      'Function.prototype.bind - what is trying to be bound is not callable'
+    )
+  }
+
+  var self = this
+  var args = Array.prototype.slice.call(arguments, 1)
+
+  var fNOP = function() {}
+
+  var fBound = function() {
+    var bindArgs = Array.prototype.slice.call(arguments)
+    return self.apply(
+      this instanceof fNOP ? this : context,
+      args.concat(bindArgs)
+    )
+  }
+
+  fNOP.prototype = this.prototype
+  fBound.prototype = new fNOP()
+  return fBound
+}
+```
+
+### 隐式绑定
+
+1. 全局上下文 全局上下文默认的 this 指向 window，严格模式下指向 undefined
+2. 直接调用函数 this 相当于调用全局上下文的情况
+3. 对象.方法的调用 谁调用这个方法，他就指向谁
+4. DOM 事件绑定（特殊） onClick addEventerListener 中 this 默认指向绑定事件的元素
+5. new 构造函数绑定 指向实例对象
+6. 箭头函数 箭头函数没有 this, 因此也不能绑定。里面的 this 会指向当前最近的非箭头函数的 this，找不到就是 window(严格模式是 undefined)
+
 ## JS 数组
 
 ## JS 如何实现继承
