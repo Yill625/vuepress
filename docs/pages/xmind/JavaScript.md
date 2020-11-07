@@ -330,6 +330,71 @@ arr(1, 2)
 3. Object.keys()
 4. Object.entries()
 
+### forEach 中 return 有效果吗？如何中断 forEach 循环
+
+#### 在 forEach 中用 return 不会返回，函数会继续执行
+
+#### 中断方法
+
+1. 使用 some every 来中断返回 some 返回 true every 中返回 false
+
+```js
+const arr = [1, 2, 3, 4]
+const isHasEven = arr.some(item => {
+  if (item % 2 === 0) return true
+})
+
+const isAllEven = arr.every(item => {
+  if (item % 2 !== 0) return false
+})
+```
+
+### JS 判断数组中是否包含某一个值
+
+```js
+// 1. array.indexOf
+const arr = [1, 2, 3, 4]
+console.log(arr.indexOf(1)) // 0
+
+// 2. includes() 组数中是否包含某元素
+console.log(arr.includes(2)) // true
+
+// 3. find() 方法返回数组中满足提供的测试函数的第一个元素的值
+arr.find(item => {
+  return item === 3
+}) // 3 返回找到的元素
+
+// 4. findIndex() 方法返回数组中满足提供的测试函数的第一个元素的索引 若没有找到对应元素则返回-1。
+arr.find(item => {
+  return item === 4
+}) // 3 返回找到的元素索引
+```
+
+### 数组扁平化
+
+1. 递归
+2. reduce 加递归
+3. 原型链上的 flat 方法
+
+```js
+/* ES6 递归*/
+
+const flatten = arr => {
+  let result = []
+  arr.forEach((item, i, arr) => {
+    if (Array.isArray(item)) {
+      result = result.concat(flatten(item))
+    } else {
+      result.push(arr[i])
+    }
+  })
+  return result
+}
+
+const arr = [1, [2, [3, 4]]]
+console.log(flatten(arr))
+```
+
 ## JS 如何实现继承
 
 ## 原型链
