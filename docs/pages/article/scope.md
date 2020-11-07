@@ -1,16 +1,22 @@
 [闭包](https://github.com/stephentian/33-js-concepts#8-%E9%97%AD%E5%8C%85)
 
-## 1.理解词法作用域和动态作用域
-
 [深入理解闭包之前置知识 → 作用域与词法作用域](https://juejin.im/post/6844903606311714824)
 
 [JavaScript 深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
 
-## 2.理解 JavaScript 的作用域和作用域链
-
 [🔥 深入理解 JavaScript, 从作用域与作用域链开始](https://juejin.im/post/6844903875456008199)
 
 [🔥 JavaScript 深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
+
+[JavaScript 深入之执行上下文栈](https://github.com/mqyqingfeng/Blog/issues/4)
+
+[JavaScript 深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
+
+[内存分析与内存泄漏定位](https://juejin.im/post/6844903508337164296#heading-2)
+
+## 1.理解词法作用域和动态作用域
+
+## 2.理解 JavaScript 的作用域和作用域链
 
 - 作用域
 
@@ -29,10 +35,6 @@
     > 要到创建这个函数的那个域”。作用域中取值,这里强调的是“创建”，而不是“调用
 
 ## 3.理解 JavaScript 的执行上下文栈，可以应用堆栈信息快速定位问题
-
-[JavaScript 深入之执行上下文栈](https://github.com/mqyqingfeng/Blog/issues/4)
-
-[JavaScript 深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
 
 ## 4.this 的原理以及几种不同使用场景的取值
 
@@ -55,8 +57,6 @@
 4. IIFE(立即执行函数表达式)创建闭包, 保存了全局作用域 window 和当前函数的作用域，因此可以全局的变量
 
 ## 6.理解堆栈溢出和内存泄漏的原理，如何防止
-
-[内存分析与内存泄漏定位](https://juejin.im/post/6844903508337164296#heading-2)
 
 ## 7.如何处理循环的异步操作
 

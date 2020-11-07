@@ -1,6 +1,10 @@
 # 原型和原型链
 
-- [🚀 图解原型和原型链](https://juejin.im/post/6844903797039300615)
+[🚀 图解原型和原型链](https://juejin.im/post/6844903797039300615)
+
+[🔥 继承的几种方式以及他们的优缺点](https://juejin.im/post/6844903839175278600)
+
+[神三元 原生 JS 灵魂之问, 请问你能接得住几个](https://juejin.im/post/6844903974378668039#heading-32)
 
 ## 1.理解原型设计模式以及 JavaScript 中的原型规则
 
@@ -29,74 +33,72 @@ function myInstanceof(left, right) {
 
 ## 4.实现继承的几种方式以及他们的优缺点
 
-- [🔥 继承的几种方式以及他们的优缺点](https://juejin.im/post/6844903839175278600)
+1. 构造函数继承
 
-  1. 构造函数继承
+```js
+function Parent1() {
+  this.name = 'parent1'
+}
+function Child1() {
+  Parent1.call(this)
+  this.type = 'child1'
+}
+console.log(new Child1())
+```
 
-  ```js
-  function Parent1() {
-    this.name = 'parent1'
-  }
-  function Child1() {
-    Parent1.call(this)
-    this.type = 'child1'
-  }
-  console.log(new Child1())
-  ```
+> 缺点： 问题是父类原型对象中一旦存在方法那么子类无法继承
 
-  > 缺点： 问题是父类原型对象中一旦存在方法那么子类无法继承
+2. 原型链继承
 
-  2. 原型链继承
+```js
+function Parent2() {
+  this.name = 'parent2'
+  this.play = [1, 2, 3]
+}
+function Child2() {
+  this.type = 'child2'
+}
+Child2.prototype = new Parent2()
 
-  ```js
-  function Parent2() {
-    this.name = 'parent2'
-    this.play = [1, 2, 3]
-  }
-  function Child2() {
-    this.type = 'child2'
-  }
-  Child2.prototype = new Parent2()
+console.log(new Child2())
+```
 
-  console.log(new Child2())
-  ```
+> 缺点：两个实例使用的是同一个原型对象。当修改父类引入属性时会同时修改
 
-  > 缺点：两个实例使用的是同一个原型对象。当修改父类引入属性时会同时修改
+3. 组合继承
 
-  3. 组合继承
+```js
+function Parent3() {
+  this.name = 'parent3'
+  this.play = [1, 2, 3]
+}
+function Child3() {
+  Parent3.call(this)
+  this.type = 'child3'
+}
+Child3.prototype = new Parent3()
+var s3 = new Child3()
+var s4 = new Child3()
+s3.play.push(4)
+console.log(s3.play, s4.play)
+```
 
-  ```js
-  function Parent3() {
-    this.name = 'parent3'
-    this.play = [1, 2, 3]
-  }
-  function Child3() {
-    Parent3.call(this)
-    this.type = 'child3'
-  }
-  Child3.prototype = new Parent3()
-  var s3 = new Child3()
-  var s4 = new Child3()
-  s3.play.push(4)
-  console.log(s3.play, s4.play)
-  ```
+> 缺点：Parent3 的构造函数会多执行了一次（Child3.prototype = new Parent3();）
 
-  > 缺点：Parent3 的构造函数会多执行了一次（Child3.prototype = new Parent3();）
+4. 寄生组合继承方
 
-  4. 寄生组合继承方
-
-  ```js
-  function Parent5() {
-    this.name = 'parent5'
-    this.play = [1, 2, 3]
-  }
-  function Child5() {
-    Parent5.call(this)
-    this.type = 'child5'
-  }
-  Child5.prototype = Object.create(Parent5.prototype)
-  Child5.prototype.constructor = Child5
-  ```
+```js
+function Parent5() {
+  this.name = 'parent5'
+  this.play = [1, 2, 3]
+}
+function Child5() {
+  Parent5.call(this)
+  this.type = 'child5'
+}
+Child5.prototype = Object.create(Parent5.prototype)
+Child5.prototype.constructor = Child5
+```
 
 ## 5.至少说出一种开源项目(如 Node)中应用原型继承的案例
 
@@ -169,7 +171,3 @@ var Child = (function(_Parent) {
   return Child
 })(Parent)
 ```
-
-## 参考地址
-
-[神三元 原生 JS 灵魂之问, 请问你能接得住几个](https://juejin.im/post/6844903974378668039#heading-32)

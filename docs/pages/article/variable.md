@@ -1,9 +1,14 @@
 # 变量
 
-## 1.Symbol 类型在实际开发中的应用、可手动实现一个简单的 Symbol
-
 - [ES6 系列之模拟实现 Symbol 类型](https://github.com/mqyqingfeng/Blog/issues/87)
 - [ECMAScript6 入门 Symbol](https://es6.ruanyifeng.com/#docs/symbol)
+- [JavaScript 深入之浮点数精度](https://juejin.im/post/6844904093601759239)
+
+- [MDN Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+- [js 中精度问题以及解决方案](https://xwjgo.github.io/2018/03/17/js%E4%B8%AD%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)
+
+## 1.Symbol 类型在实际开发中的应用、可手动实现一个简单的 Symbol
 
 ## 2.JavaScript 中的变量在内存中的具体存储形式
 
@@ -33,9 +38,3 @@
 - 使用 typeof 操作符检测 null 值返回的类型却是"object"s
 
 ## 4.出现小数精度丢失的原因，JavaScript 可以存储的最大数字、最大安全数字，JavaScript 处理大数字的方法、避免精度丢失的方法
-
-- [JavaScript 深入之浮点数精度](https://juejin.im/post/6844904093601759239)
-
-- [MDN Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
-
-- [js 中精度问题以及解决方案](https://xwjgo.github.io/2018/03/17/js%E4%B8%AD%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)

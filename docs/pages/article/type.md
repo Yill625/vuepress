@@ -1,5 +1,7 @@
 # 类型
 
+[【JS 进阶】你真的掌握变量和类型了吗](https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-9)
+
 ## 1.JavaScript 规定了几种语言类型
 
 > ECMAScript 标准规定了 7 种数据类型，其把这 7 种数据类型又分为两种：原始类型和对象类型。
@@ -81,7 +83,3 @@
   - ==
 
 ![类型转换](https://weapposs.oss-cn-shenzhen.aliyuncs.com/cover/2020/08/04/b19yqaOkAKfapmkhhnzB2RIYewSlzgBIIP4p97jm.png)
-
-### 参考地址
-
-[【JS 进阶】你真的掌握变量和类型了吗](https://juejin.im/post/5cec1bcff265da1b8f1aa08f#heading-9)
