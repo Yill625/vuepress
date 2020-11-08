@@ -359,13 +359,13 @@ console.log(arr.indexOf(1)) // 0
 // 2. includes() 组数中是否包含某元素
 console.log(arr.includes(2)) // true
 
-// 3. find() 方法返回数组中满足提供的测试函数的第一个元素的值
+// 3. find() 方法返回数组中满足提供的测试函数的第一个元素的值 没找到返回undefined
 arr.find(item => {
   return item === 3
 }) // 3 返回找到的元素
 
 // 4. findIndex() 方法返回数组中满足提供的测试函数的第一个元素的索引 若没有找到对应元素则返回-1。
-arr.find(item => {
+arr.findIndex(item => {
   return item === 4
 }) // 3 返回找到的元素索引
 ```
@@ -378,7 +378,6 @@ arr.find(item => {
 
 ```js
 /* ES6 递归*/
-
 const flatten = arr => {
   let result = []
   arr.forEach((item, i, arr) => {
@@ -393,6 +392,59 @@ const flatten = arr => {
 
 const arr = [1, [2, [3, 4]]]
 console.log(flatten(arr))
+```
+
+```js
+// concat recude
+function flatten(arr) {
+  return arr.reduce(function(prev, cur) {
+    return prev.concat(Array.isArray(cur) ? flatten(cur) : cur)
+  }, [])
+}
+
+const arr = [1, [2, [3, 4]]]
+console.log(flatten(arr))
+```
+
+```js
+// flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
+const arr1 = [0, 1, 2, [3, 4]]
+
+console.log(arr1.flat())
+// expected output: [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, 2, [[[3, 4]]]]
+
+console.log(arr2.flat(2))
+// expected output: [0, 1, 2, [3, 4]]
+```
+
+### Js 数组的高阶函数
+
+1. map
+
+```js
+const a = [1, 2].map(item => item * 2) // [2,4]
+```
+
+2. reduce
+
+```js
+const sum = [1, 2].reduce((pre, res) => {
+  return pre + res
+}, 0) // 3
+```
+
+3. filter
+
+```js
+const even = [1, 2].filter(item => item % 2 === 0) // [2]
+```
+
+4. sort
+
+```js
+const sort = [2, 1].sort((a, b) => a - b) // [1,2]
 ```
 
 ## JS 如何实现继承
