@@ -451,4 +451,26 @@ const sort = [2, 1].sort((a, b) => a - b) // [1,2]
 
 ## 原型链
 
+### 原型对象和构造函数有什么关系
+
+1. 在 JavaScript 中，每当定义一个函数数据类型(普通函数、类)时候，都会天生自带一个 prototype 属性，这个属性指向函数的原型对象。
+2. 当函数经过 new 调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个`__proto__`属性，指向构造函数的原型对象。
+
+### 描述下原型链
+
+1. 首先要明白实例的`__proto__`属性与构造函数的`prototype`属性都是指向原型对象，原型对象的 constructor 属性指向构造函数
+2. JavaScript 对象通过`__proto__`属性指向父类原型对象，直达指向 Object 的原型对象为止，这样就形成了一个原型指向的链条，即原型链
+3. 对象的 hasOwnPrototype()来检查对象自身是否存在该属性
+4. 使用 in 检查对象中是否有该属性时，如果该属性自身对象没有 但是原型链中有 也是返回 true
+
+```js
+function Person() {}
+
+const person = new Person()
+
+person.__proto__ === Person.prototype
+Person.prototype.__proto__ === Object.prototype
+Object.prototype.__proto__ === null
+```
+
 ## DOM 事件
