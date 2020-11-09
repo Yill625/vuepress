@@ -482,6 +482,8 @@ console.log(son.name)
 
 3. 组合继承
 
+> 将构造函数式继承和原型链式继承组合
+
 ```js
 function Parent(name) {
   this.name = name
@@ -505,6 +507,88 @@ console.log(son.getParentName())
 console.log(son.getSonAge())
 
 // 缺点 无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部
+```
+
+4. 原型式继承
+
+> 使用 Object.create() 借助原型可以基于已有的对象创建新对象
+> [mdn-Oject.create](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+> Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的**proto**
+
+```js
+var person = {
+  name: 'Nicholas',
+  friends: ['Shelby', 'Court', 'Van']
+}
+
+var anotherPerson = Object.create(person, {
+  name: {
+    value: 'Greg'
+  }
+})
+anotherPerson.__proto__ === person
+console.log(anotherPerson.name) //"Greg"
+// 缺点和原型链继承一样 原型的引用属性和子属性共享
+```
+
+5. 寄生式继承
+
+> 创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再像真的是它做了所有的工作一样返回对象。
+
+```js
+function createObject(obj) {
+  const clone = Object.create(obj)
+  clone.sayHi = function() {
+    console.log('hi')
+  }
+  return clone
+}
+
+var person = {
+  name: 'Nicholas',
+  friends: ['Shelby', 'Court', 'Van']
+}
+
+var anotherPerson = createObject(person)
+anotherPerson.sayHi() //"hi
+
+// 缺点：使用寄生式继承来为对象添加函数，会由于不能做到函数复用而降低效率；这一点与构造函数模式类似
+```
+
+6. 寄生组合式继承
+
+> 理想的继承方式
+
+```js
+function Parent(name) {
+  this.name = name
+}
+
+Parent.prototype.sayName = function() {
+  console.log(this.name)
+}
+
+function Son(name, age) {
+  Parent.call(this, name)
+  this.age = age
+}
+
+function initExtend(Son, Parent) {
+  const prototype = Object.create(Parent.prototype)
+  prototype.construction = Son
+  Son.prototype = prototype
+}
+
+initExtend(Son, Parent)
+
+Son.prototype.sayAge = function() {
+  console.log(this.age)
+}
+
+const son = new Son('ivan', 18)
+
+console.log(son.sayAge())
+console.log(son.sayName())
 ```
 
 ## 原型链
