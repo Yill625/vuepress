@@ -449,6 +449,64 @@ const sort = [2, 1].sort((a, b) => a - b) // [1,2]
 
 ## JS 如何实现继承
 
+> 继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或者新的功能，也可以用父类的功能，但不能选择性的继承父类。通过使用继承我们能够非常方便地复用以前的代码，大大增加开发效率
+
+1. 原型链继承
+
+```js
+function Parent() {}
+function Son(name) {}
+Son.prototype = new Parent()
+
+// 缺点1. 当修改子类的继承的引用属性时 会修改所有子类
+// 缺点2. 创建子类型的实例时，不能向超类型的构造函数中传递参数
+```
+
+2. 借用 Call
+   > 相比原型链 属性都有自己独立副本 子类型构造函数中向超类型构造函数传递参数
+
+```js
+function Parent(name) {
+  this.name = name
+}
+
+function Son(name) {
+  Parent.call(this, name)
+}
+
+const son = new Son('son')
+
+console.log(son.name)
+// 缺点 在超类型的原型中定义的方法，对子类型而言也是不可见的
+```
+
+3. 组合继承
+
+```js
+function Parent(name) {
+  this.name = name
+}
+Parent.prototype.getParentName = function() {
+  return this.name
+}
+function Son(name, age) {
+  Parent.call(this, name)
+  this.age = age
+}
+
+Son.prototype = new Parent()
+
+Son.prototype.getSonAge = function() {
+  return this.age
+}
+
+const son = new Son('ivan', 18)
+console.log(son.getParentName())
+console.log(son.getSonAge())
+
+// 缺点 无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部
+```
+
 ## 原型链
 
 ### 原型对象和构造函数有什么关系
