@@ -616,3 +616,125 @@ Object.prototype.__proto__ === null
 ```
 
 ## DOM 事件
+
+### 绑定事件的方法
+
+1. HTML 的内联属性
+
+```html
+<button onClick="alert('click')"></button>
+```
+
+2. 元素的 onXXX 属性添加事件
+
+```js
+document.getElementById('button').onClick = function() {
+  alert('click')
+}
+```
+
+3. addEventListener
+   - 标准方法 el.addEventListener(EventName,handle,optios|useCapture )
+     - EventName: 时间名称
+     - handle: 事件函数
+     - useCaptrue: 是否在捕获阶段触发事件，默认 false
+     - options: options 选项
+   - 移除事件 el.removeEventListener(EventName,handle)
+
+```js
+const alertF = function() {
+  alert('click')
+}
+document.getElementById('button').addEventListener('click', alertF)
+document.getElementById('button').removeEventListener('click', alertF)
+```
+
+4. IE8 兼容处理
+
+   - el.attachEvent(EventName,handle)
+   - el.depachEvent(EventName,handle)
+
+5. 对比
+   - 只支持冒泡
+   - this 指向 window
+   - 绑定的顺序倒叙执行
+   - 事件名要加'on'
+
+### 事件对象
+
+- 标准
+  - 属性
+    - currentTarget：currentTarget 的值始终等于 this，即指向事件所绑定到的元素
+    - target: 指向真正触发事件的元素
+    - bubbles: 表示事件是否冒泡
+    - cancelable: 是否可以取消默认行为
+    - defaultPrevented: 为真时调用了 preventDefault()
+    - detail: 描述事件的细节
+    - eventPhase: 描述事件处理函数的阶段 1. 捕获 2. 处于目标 3. 冒泡
+    - trusted: 为真则是浏览器原生事件,为假则是手动添加的事件
+    - type: 事件类型
+  - 方法
+    - event.preventDefault() 阻止默认事件
+    - event.stopPropagation() 阻止冒泡，也可以阻止捕获（根据 DOM 的事件流，捕获阶段被阻止了处于目标阶段的和事件冒泡也就不会被触发）
+    - event.stopImmediatePropagation 既能阻止事件向父元素冒泡，也能阻止元素同事件类型的其他监听器被触发
+      - react 使用合成事件，如果出现点击空白区域弹框消失，可以利用 stopImmediatePropagation 阻止事件的其它函数执行 （只执行我这个事件的回调函数,其它不执行）因为我都冒泡到 document 上了，阻止冒泡没什么用了，另外一种解决方法关闭操作注册到 window 上
+      - stopImmediatePropagation 这个解决问题的不是阻止冒泡 而是不允许其他的事件回调触发 因为我们这时候事件已经冒泡到 document 上了 为 document 再绑定了一个 click 事件 此时我们想触发按钮这个 click 事件（实际绑定到 document 上）触发以后，不允许再触发其他 document 上 click 的事件回调函数
+- IE
+  - 属性
+    - srcElement：与 target 的值相同
+    - returnValue：默认为真，若设置为 false，可以阻⽌默认事件
+    - cancelBubble：默认为假，设置为 true 可以阻⽌冒泡
+  - 方法
+    - el.attachEvent：回调中的 event 可以为传⼊的 event 参数也可为 window.event
+
+### DOM 事件流
+
+> 事件流： 描述的是从页面中接收事件的顺序
+
+#### 执行的三个阶段
+
+1. 事件捕获，当事件发生时，首先发生的是事件捕获，为父元素截获事件提供了机会
+2. 处于目标，事件到了具体元素时，在具体元素上发生，并且被看成冒泡阶段的一部分
+3. 事件冒泡，冒泡阶段发生，事件开始冒泡
+
+#### 注意点
+
+1. DOM 事件流确实会按照这三个阶段执行，我们可以通过 addEventListener 注册事件时候指定 useCapture 的值来规定事件在捕获阶段还是冒泡阶段中执行（如果该对象是目标对象，则会在目标阶段执行）
+2. 你会注意到按照 DOM 事件流这种执行顺序，事件不会被触发两次吧，造成重复触发，并不是的，我们可以有选择是在冒泡阶段触发还是捕获阶段，默认是冒泡阶段
+
+### [多种事件](https://www.runoob.com/jsref/dom-obj-event.html)
+
+#### UI 事件
+
+1. load
+   - window 上触发：页面完全加载完，包括所有图像，js 文件，css 文件，object 内嵌对象等等
+   - `<script><link>`:js 文件或 css 文件加载成功后，script 标签只支持内联属性
+2. resize 窗口发生变化时
+3. scroll
+
+   - window 上触发，页面发生滚动时，
+   - 元素，可滚动元素发生滚动时
+
+4. 焦点 可以捕获 不能冒泡
+
+   - focus
+   - blur
+
+#### 鼠标与滚轮事件
+
+#### 文本事件
+
+#### HTML5 事件
+
+### DOM 事件模型
+
+1. DOM0 级事件 on-event (HTML 属性)
+2. DOM1 级事件 没有 1 级 DOM。DOM 级别 1 于 1998 年 10 月 1 日成为 W3C 推荐标准。1 级 DOM 标准中并没有定义事件相关的内容，所以没有所谓的 1 级 DOM 事件模型
+3. DOM2 级事件 el.addEventListerer(EventName,handle,useCarture) 规定了 DOM 事件流
+4. DOM3 级事件 在 DOM2 级事件的基础上添加了更多的事件类型
+
+### 事件代理（事件委托）
+
+- 由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。
+- 优点:减少内存消耗，提高性能
+- 通过 e.currentTarget 拿到目标对象
