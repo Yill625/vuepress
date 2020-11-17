@@ -108,3 +108,16 @@ module，chunk 和 bundle 其实就是同一份逻辑代码在不同转换场景
    当使用 mini-css-extract-plugin 插件抽离 css 文件时候，该插件可以获取到 webapck 中 hash 以及其该 chunk 下的 hash，当然改插件还可以自己根据文件内容生成 hash 也就是 contenthash
 3. 图片
    当我们使用 file-loader 处理图片等资源时候，其选项 contenthash 以及 hash 选项是自己内部生成的，❗️ 不采用 webpack 中的 hash
+
+## 性能优化
+
+### 性能分析
+
+#### 体积分析
+
+1. 初级分析 通过官方提供的 stat.json 文件帮助我们分析打包结果，stat.json 文件生成命令 `webpack --profile --json > stats.json`
+2. 第三方打包工具 webpack-bundle-analyzer 是打包分析神器 webpack-bundle-analyzer 其底层也是依赖 stat.json 文件的，通过对 stat.json 的分析，得出最后的分析页面
+
+#### 速度分析
+
+speed-measure-webpack-plugin 这个插件帮助我们分析整个打包的总耗时，以及每一个 loader 和每一个 plugins 构建所耗费的时间，从而帮助我们快速定位到可以优化 Webpack 的配置
