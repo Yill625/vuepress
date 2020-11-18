@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /learn.svg
-heroText: 前端搬运工
+heroText: 前端打工人
 tagline: Learning was, is and will be important to all, old or young, rich or poor.
 actionText: 快速查看 →
 actionLink: /pages/article/index.md
