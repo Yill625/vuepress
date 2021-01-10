@@ -148,6 +148,15 @@ module.exports = {
           children: [
             ['MobileLibrary.md', '框架类库'] //菜单名称为'子菜单1'，
           ]
+        },
+        {
+          title: '三、代码规范', // 一级菜单名称
+          collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+          children: [
+            ['Eslint.md', 'Eslint'], //菜单名称为'子菜单1'，
+            ['Prettier.md', 'Prettier']
+          ]
         }
       ],
       '/pages/xmind/': [
@@ -174,8 +183,7 @@ module.exports = {
           children: [
             ['Webpack.md', 'Webpack'] //菜单名称为'子菜单1'，
           ]
-        }
-        ,
+        },
         {
           title: 'Vue', // 一级菜单名称
           collapsable: true, // false为默认展开菜单, 默认值true是折叠,
