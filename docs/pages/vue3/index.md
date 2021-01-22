@@ -22,3 +22,17 @@
 ### [片段](https://vue3js.cn/docs/zh/guide/migration/fragments.html#%E6%A6%82%E8%A7%88)
 
 > 模板可以有多个根节点
+
+## 文档地址
+
+### 文档
+
+1. [Vue3 中文文档](https://vue3js.cn/docs/zh/)
+2. [Vue3 设计理念](https://vue3js.cn/vue-composition/)
+3. [Vue3 Api](https://vue3js.cn/vue-composition-api/)
+
+### Vue3 配套支持
+
+1. [Vue CLi](https://cli.vuejs.org/migrating-from-v3/)
+2. [Vue Router](https://vue3js.cn/router4/)
+3. [Vuex](https://vue3js.cn/vuex/zh/)
