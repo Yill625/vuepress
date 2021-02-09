@@ -29,6 +29,7 @@ module.exports = {
       { text: '知识点', link: '/pages/xmind/JavaScript.md' },
       // { text: '文章整理', link: '/pages/post/index.md' },
       { text: 'Vue3', link: '/pages/vue3/index.md' },
+      { text: 'CSS', link: '/pages/css/index.md' },
       { text: '文章整理', link: '/pages/article/index.md' },
       { text: '工作', link: '/pages/WorkHole/index.md' },
       { text: 'Github', link: 'https://github.com/Yill625' }
