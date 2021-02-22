@@ -11,7 +11,7 @@ module.exports = {
     }
   },
   title: '前端打工人', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
-  description: '前端文章记录', // meta 中的描述文字，用于SEO
+  description: '易亮亮前端文章记录', // meta 中的描述文字，用于SEO
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     [
@@ -25,7 +25,6 @@ module.exports = {
     lastUpdated: 'Last Updated', // string | boolean
     //顶部导航栏
     nav: [
-      { text: '首页', link: '/' },
       { text: '知识点', link: '/pages/xmind/JavaScript.md' },
       // { text: '文章整理', link: '/pages/post/index.md' },
       { text: 'Vue3', link: '/pages/vue3/index.md' },
