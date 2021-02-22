@@ -27,7 +27,7 @@ module.exports = {
     nav: [
       { text: '📚书单', link: '/pages/book/index.md' },
       { text: '✊掘金', link: '/pages/juejin/index.md' },
-      { text: '🥳知识点', link: '/pages/xmind/index.md' },
+      { text: '🥳知识点', link: '/pages/article/index.md' },
       { text: '👩‍💻工作', link: '/pages/WorkHole/index.md' },
       { text: 'Github', link: 'https://github.com/Yill625' }
       // { text: 'Vue3', link: '/pages/vue3/index.md' },
@@ -121,6 +121,19 @@ module.exports = {
             ['optimization.md', '性能优化'],
             ['safety.md', '前端安全'],
             ['business.md', '业务相关']
+          ]
+        }
+      ],
+      '/pages/book/': [
+        {
+          title: 'JavaScript', // 一级菜单名称
+          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
+          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+          children: [
+            [
+              'ProfessionalJavaScriptForWebDevelopers.md',
+              'JavaScript高级程序设计（第4版）'
+            ]
           ]
         }
       ],
