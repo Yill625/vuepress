@@ -25,13 +25,14 @@ module.exports = {
     lastUpdated: 'Last Updated', // string | boolean
     //顶部导航栏
     nav: [
-      { text: '知识点', link: '/pages/xmind/JavaScript.md' },
-      // { text: '文章整理', link: '/pages/post/index.md' },
-      { text: 'Vue3', link: '/pages/vue3/index.md' },
-      { text: 'CSS', link: '/pages/css/index.md' },
-      { text: '文章整理', link: '/pages/article/index.md' },
-      { text: '工作', link: '/pages/WorkHole/index.md' },
+      { text: '📚书单', link: '/pages/book/index.md' },
+      { text: '✊掘金', link: '/pages/juejin/index.md' },
+      { text: '🥳知识点', link: '/pages/juejin/index.md' },
+      { text: '👩‍💻工作', link: '/pages/WorkHole/index.md' },
       { text: 'Github', link: 'https://github.com/Yill625' }
+      // { text: 'Vue3', link: '/pages/vue3/index.md' },
+      // { text: 'CSS', link: '/pages/css/index.md' },
+      // { text: '文章整理', link: '/pages/article/index.md' },
     ],
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
     sidebar: {
