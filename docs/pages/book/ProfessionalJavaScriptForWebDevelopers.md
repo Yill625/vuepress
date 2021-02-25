@@ -83,3 +83,33 @@ BOM 主要针对浏览器窗口和子窗口（frame）
   - 通过 `rel="preload" as="${type}"`进行内容预加载
   - 通过 `rel="prefetch"`进行内容懒加载
   - [使用 Preload/Prefetch 优化你的应用](https://zhuanlan.zhihu.com/p/48521680)
+
+## 第 3 章 语言基础
+
+### 语法
+
+- 最佳实践：ECMAScript 标识符使用驼峰大小写形式，即第一个单词的首字母小写，后面每个单词
+  的首字母大写
+- 注释 单行 // 多行 `/* 1212*/`
+
+### 变量
+
+- 最佳实践
+  - 不使用 var
+  - const 优先 ，let 次之
+
+### 数据类型
+
+ECMAScript 有 6 中原始类型 Symbol String Number Boolean Null Undefined
+typeof 可以判断原始类型,除了 null 因为特殊值 null 被认为是一个对空对象的引用
+
+- undefined
+  - 永远不必显式地将变量值设置为 undefined
+- null
+  - `console.log(typeof null); // "object"`
+  - 作为空对象初始值
+- boolean
+  - 其他值转换为布尔类型的情况
+    | 数据类型 | 转换为 true 的值 | 转换为 false 的值 |
+    | ---------------------------------- | :----------------------------------------------: |:-:|
+    | | ||
