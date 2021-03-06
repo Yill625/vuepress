@@ -29,6 +29,7 @@ module.exports = {
       { text: '✊掘金', link: '/pages/juejin/index.md' },
       { text: '🥳知识点', link: '/pages/article/index.md' },
       { text: '👩‍💻工作', link: '/pages/WorkHole/index.md' },
+      { text: '🍀生活', link: '/pages/life/index.md' },
       { text: 'Github', link: 'https://github.com/Yill625' }
       // { text: 'Vue3', link: '/pages/vue3/index.md' },
       // { text: 'CSS', link: '/pages/css/index.md' },
